@@ -6,4 +6,4 @@ a=float(a)
 b=float(b)
 sum=a+b
 avg=(a+b)/2.0
-print("sum: ",sum," avg: ",avg)
+print("sum: %.2f; avg: %.2f" %(sum, avg))
