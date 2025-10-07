@@ -1,12 +1,12 @@
-def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
+def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:        # минимум и максимум
 
-    if not nums:
+    if not nums:                            # проверка: если пустой, то ValueError
         raise ValueError("пустой список")
     
-    max_num=nums[0]
+    max_num=nums[0]     # переменные для min и max, заносим в них значение nums[0]
     min_num=nums[0]
 
-    for num in nums:
+    for num in nums:        # поиск min и max
         if num>max_num:
             max_num=num
         if num<min_num:
@@ -14,23 +14,28 @@ def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
 
     return min_num, max_num
 
-def unique_sorted(nums: list[float | int]) -> list[float | int]:
-    unique_nums = []
-    for num in nums:
-        if num not in unique_nums:
+
+def unique_sorted(nums: list[float | int]) -> list[float | int]:        # сортировка
+    
+    unique_nums = []        # создаем новый список
+    for num in nums:        # проходимся по списку
+        if num not in unique_nums:      # если num - уникальное значение (нет такого же в новом списке), то заносим в список
             unique_nums.append(num)
 
-    unique_nums.sort()
+    unique_nums.sort()      # сортировка списка по возрастанию 
     return unique_nums
 
-def flatten(mat: list[list | tuple]) -> list:
-    flat_list = []
-    for row in mat:
-        if not isinstance(row, (list, tuple)):
+
+def flatten(mat: list[list | tuple]) -> list:       # объединение списков
+    
+    flat_list = []        # создаем новый список
+    for str in mat:
+        if not isinstance(str, (list, tuple)):      # eсли строка/элемент не является списком/кортежем — TypeError
             raise TypeError
-        for item in row:
-            flat_list.append(item)
+        for item in str:
+            flat_list.append(item)      # соединяем
     return flat_list
+
 
 if __name__ == '__main__':
     print("min/max: --------------------")
