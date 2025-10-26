@@ -33,8 +33,6 @@ def count_freq(tokens: list[str]) -> dict[str, int]:
 
 def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
     sorted_freq = sorted(freq.items(), key=lambda item: (-item[1], item[0]))
-    # задаем функцию сортировки и сортируем. функция получает item (токен, частота)
-    # и возвращает (-частота, токен)
 
     return sorted_freq[:n]
 
