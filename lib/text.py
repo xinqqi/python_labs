@@ -1,5 +1,4 @@
 import re
-from typing import List, Dict, Tuple
 
 def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     if casefold:
