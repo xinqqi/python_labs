@@ -1,6 +1,5 @@
 import re
 
-
 def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     if casefold:
         text = text.casefold()
