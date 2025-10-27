@@ -3,11 +3,28 @@ import csv
 from typing import Iterable, Sequence
 
 def read_text(path: str | Path, encoding: str = "utf-8") -> str:
+
+    """
+    Открыть файл на чтение в указанной кодировке и вернуть содержимое как одну строку.
+    Если файл не найден — FileNotFoundError.
+    Если кодировка не подходит — UnicodeDecodeError.
+    path: путь к файлу.
+    encoding: кодировка файла (по умолчанию "utf-8")
+        изменить кодировку: encoding="cp1251"
+    """
+
     p = Path(path)
     # FileNotFoundError и UnicodeDecodeError пусть «всплывают» — это нормально
     return p.read_text(encoding=encoding)
 
 def write_csv(rows: Iterable[Sequence], path: str | Path, header: tuple[str, ...] | None = None) -> None:
+
+    """
+    Создать/перезаписать CSV с разделителем ','.
+    header будет записан первой строкой.
+    Проверка на одинаковую длину строк (иначе ValueError).
+    """
+
     p = Path(path)
     rows = list(rows)
 
@@ -25,7 +42,7 @@ def write_csv(rows: Iterable[Sequence], path: str | Path, header: tuple[str, ...
             w.writerow(r)
 
 def ensure_parent_dir(path: str | Path) -> None:
-    """Создать родительские директории, если их нет (для удобства перед записью)."""
+    """Создать родительские директории, если их нет."""
     Path(path).parent.mkdir(parents=True, exist_ok=True)
 
 if __name__ == "__main__":
