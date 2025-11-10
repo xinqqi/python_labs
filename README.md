@@ -554,3 +554,131 @@ if __name__ == "__main__":
 <img width="777" height="223" alt="image" src="https://github.com/user-attachments/assets/8b6a8f29-a1c4-4a98-af26-e064b6b61f29" />
 <img width="805" height="194" alt="image" src="https://github.com/user-attachments/assets/ace5bb98-f50d-4962-9801-d5ba65bb7617" />
 <img width="1113" height="349" alt="image" src="https://github.com/user-attachments/assets/5622c852-ef4f-45de-940c-3648f70ad372" />
+
+-----
+-----
+-----
+## Лабораторная работа 5
+-----
+-----
+### Задание A
+``` python
+from pathlib import Path
+import json
+import csv
+
+def json_to_csv(json_path: str, csv_path: str) -> None:
+    """
+    Преобразует JSON-файл в CSV.
+    Поддерживает список словарей [{...}, {...}], заполняет отсутствующие поля пустыми строками.
+    Кодировка UTF-8. Порядок колонок — как в первом объекте или алфавитный (указать в README).
+    """
+    json_file = Path(json_path)
+    csv_file = Path(csv_path)
+
+    if not json_file.exists():
+        raise FileNotFoundError(f"JSON-файл не найден: {json_path}")
+    
+    with json_file.open('r', encoding='utf-8') as f:
+        try:
+            data = json.load(f)
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Ошибка чтения JSON-файла (неверный формат или пустой): {e}")
+    
+    for item in data:
+        if not isinstance(item, dict):
+            raise ValueError("Все элементы JSON должны быть словарями.")
+    if not data or not isinstance(data, list):
+        raise ValueError("JSON-файл пустой.")  
+    
+    first_keys = list(data[0].keys())
+    all_unique_keys = set(first_keys)
+    for item in data:
+        all_unique_keys.update(item.keys())
+    add_keys = sorted([k for k in all_unique_keys if k not in first_keys])
+    fieldnames = first_keys + add_keys
+    
+    with csv_file.open('w', newline='', encoding='utf-8') as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        for item in data:
+            row = {key: item.get(key, "") for key in fieldnames}
+            writer.writerow(row)
+
+json_to_csv(f"data/samples/people.json", f"data/out/people_from_json.csv")
+
+
+def csv_to_json(csv_path: str, json_path: str) -> None:
+    """
+    Преобразует CSV в JSON (список словарей).
+    Заголовок обязателен, значения сохраняются как строки.
+    json.dump(..., ensure_ascii=False, indent=2)
+    """
+    csv_file = Path(csv_path)
+    json_file = Path(json_path)
+
+    if not csv_file.exists():
+        raise FileNotFoundError(f"CSV-файл не найден: {csv_path}")
+    
+    with csv_file.open('r', newline='', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        if not reader.fieldnames:
+            raise ValueError("CSV-файл пуст или отсутствует заголовок.")
+        json_data = list(reader)
+    if not json_data:
+       raise ValueError("CSV-файл пустой.")
+
+    with json_file.open('w', encoding='utf-8') as f:
+        json.dump(json_data, f, ensure_ascii=False, indent=2)
+        
+csv_to_json(f"data/samples/people.csv", f"data/out/people_from_csv.json")
+```
+![1](https://github.com/user-attachments/assets/2ab516cf-53aa-49eb-a4b9-18e08c2271bf)
+![2](https://github.com/user-attachments/assets/c5a34c78-f71a-406d-ac0d-1abde0e43275)
+
+### Задание B
+```python
+from openpyxl import Workbook
+import csv
+from pathlib import Path
+
+def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
+    """
+    Конвертирует CSV в XLSX.
+    Буду использовать openpyxl.
+    Первая строка CSV — заголовок.
+    Лист называется "Sheet1".
+    Колонки — автоширина по длине текста (не менее 8 символов).
+    """
+    csv_file = Path(csv_path)
+    xlsx_file = Path(xlsx_path)
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Sheet1"
+
+    if not csv_file.exists():
+            raise FileNotFoundError(f"Исходный CSV-файл не найден: {csv_path}")
+    with csv_file.open('r', newline='', encoding='utf-8') as f:
+        reader = csv.reader(f)
+        rows = list(reader)
+
+    if not rows:
+        raise ValueError("CSV файл пустой")
+
+    for row in rows:
+        ws.append(row)
+
+    #data_rows = []
+        
+    for col_idx, col_title in enumerate(ws.columns, start=1):
+        max_length = max(len(str(cell.value)) if cell.value is not None else 0 for cell in col_title)
+        adjusted_width = max(max_length, 8)
+        col_letter = ws.cell(row=1, column=col_idx).column_letter
+        ws.column_dimensions[col_letter].width = adjusted_width
+    
+    wb.save(xlsx_path)
+
+csv_to_xlsx('data/samples/cities.csv', 'data/out/cities.xlsx')
+```
+![3](https://github.com/user-attachments/assets/bc4b660e-124e-46c8-a7b5-34fdd31f9b9f)
