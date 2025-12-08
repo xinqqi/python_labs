@@ -36,15 +36,7 @@ class Student:
     
 
     @classmethod
-   # def from_dict(cls, d: dict):
-      #  return cls(
-     #       fio=d["fio"],
-    #        birthdate=d["birthdate"],
-   #         group=d["group"],
-  #          gpa=d["gpa"]
- #       )
     def from_dict(cls, data: Dict[str, Any]) -> "Student":
-        """Десериализация: создаёт объект из словаря."""
         return cls(**data)
     
     def __str__(self):
