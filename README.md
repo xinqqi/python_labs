@@ -1141,10 +1141,7 @@ if __name__ == "__main__":
     print("-" * 10)
     print(f"Файл со списком: {csv_path}")
     print("-" * 50)
-    ```
+```
 
----
-
-<img width="827" height="437" alt="image9lab" src="https://github.com/user-attachments/assets/dc9c219e-257c-4504-8157-1bd76b6a4351" />
-<img width="629" height="225" alt="image9lab2" src="https://github.com/user-attachments/assets/58608f4d-e15d-4e6d-a9db-39a037a48492" />
-
+<img width="827" height="437" alt="image9lab" src="https://github.com/user-attachments/assets/f1ccce22-0722-41bc-9de8-042fc84a3fb4" />
+<img width="629" height="225" alt="image9lab2" src="https://github.com/user-attachments/assets/dac7115d-9847-424e-b40e-a68840d0547f" />
