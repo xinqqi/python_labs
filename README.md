@@ -3,7 +3,7 @@
 ## Лабораторная работа 1
 -----
 -----
-### Задание 1
+**Задание 1**
 ``` python
 name = input("Имя: ")
 age = int(input("Возраст: "))
@@ -12,7 +12,7 @@ print("Привет, " + name+"! Через год тебе будет "+str(age
 ```
 <img width="452" height="113" alt="image" src="https://github.com/user-attachments/assets/4e8fd0e8-9a8b-4166-9e27-6b404b1aa42e" />
 
-### Задание 2
+**Задание 2**
 ``` python
 a=input("a: ")
 b=input("b: ")
@@ -26,7 +26,7 @@ print("sum: %.2f; avg: %.2f" %(sum, avg))
 ```
 <img width="423" height="100" alt="image" src="https://github.com/user-attachments/assets/9973d934-f1dc-4a79-8097-eba6a934796a" />
 
-### Задание 3
+**Задание 3**
 ``` python
 price=float(input())
 discount=float(input())
@@ -41,7 +41,7 @@ print("Итого к оплате:    %.2f" %(total))
 <img width="382" height="174" alt="image" src="https://github.com/user-attachments/assets/894f905d-193a-497a-99dc-e60aad19a840" />
 
 
-### Задание 4
+**Задание 4**
 ``` python
 m=int(input("Минуты: "))
 h=m//60
@@ -50,7 +50,7 @@ print(f"{h:d}:{m:02d}")
 ```
 <img width="363" height="76" alt="image" src="https://github.com/user-attachments/assets/3e03e864-287f-4266-bedf-53d924f19671" />
 
-### Задание 5
+**Задание 5**
 ``` python
 fio = input("ФИО: ")
 words = fio.split()
@@ -66,7 +66,7 @@ print("Длина (символов): ", len(fio))
 ```
 <img width="464" height="215" alt="image" src="https://github.com/user-attachments/assets/aed0a3b1-ca1e-4ae9-ba15-66d8fca67b79" />
 
-### Задание 6
+**Задание 6**
 ``` python
 N = int(input())
 
@@ -91,7 +91,7 @@ print(y, n)
 ## Лабораторная работа 2
 -----
 -----
-### Задание 1
+**Задание 1**
 ``` python
 # минимум и максимум
 def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
@@ -162,7 +162,7 @@ if __name__ == '__main__':
 <img width="658" height="377" alt="image" src="https://github.com/user-attachments/assets/2a6e889e-bdd3-4cfa-9ac8-1d01c16b587e" />
 
 
-### Задание 2
+**Задание 2**
 ``` python
 def transpose(mat: list[list[float | int]]) -> list[list]:  # транспонирование матрицы
 
@@ -282,7 +282,7 @@ print(col_sums(matrix12))
 <img width="718" height="399" alt="image" src="https://github.com/user-attachments/assets/84a7f41d-8c5b-4f4a-8467-e27dbae16718" />
 
 
-### Задание 3
+**Задание 3**
 ``` python
 def format_record(rec: tuple[str, str, float]) -> str:
     fio, group, gpa = rec
@@ -328,7 +328,7 @@ print(format_record(("  сидорова  анна   сергеевна ", "ABB-
 ## Лабораторная работа 3
 -----
 -----
-### Задание A
+**Задание 1**
 ``` python
 import re
 
@@ -386,7 +386,7 @@ assert top_n(freq2, 2) == [("ab", 2), ("cc", 2)]
 ```
 <img width="875" height="588" alt="image" src="https://github.com/user-attachments/assets/4a85974b-69da-4b1b-8066-39a7bfc34aab" />
 
-### Задание B
+**Задание 2**
 запуск python -m src.lab03.text_stats ,
 конец ввода Ctrl Z + Enter
 ``` python
@@ -420,7 +420,7 @@ if __name__ == "__main__":
 ## Лабораторная работа 4
 -----
 -----
-### Задание A
+**Задание 1**
 ```python
 from pathlib import Path
 import csv
@@ -484,7 +484,7 @@ if __name__ == "__main__":
 <img width="750" height="289" alt="image" src="https://github.com/user-attachments/assets/2d9a57c0-154d-422f-b7da-6005e11d8d5f" />
 <img width="521" height="134" alt="image" src="https://github.com/user-attachments/assets/69c824f4-0b4c-499b-8705-aaf9d9073b14" />
 
-### Задание B
+**Задание 2**
 ```python
 import argparse
 import sys
@@ -561,7 +561,7 @@ if __name__ == "__main__":
 ## Лабораторная работа 5
 -----
 -----
-### Задание A
+**Задание 1**
 ``` python
 from pathlib import Path
 import json
@@ -636,7 +636,7 @@ csv_to_json(f"data/samples/people.csv", f"data/out/people_from_csv.json")
 ![1](https://github.com/user-attachments/assets/2ab516cf-53aa-49eb-a4b9-18e08c2271bf)
 ![2](https://github.com/user-attachments/assets/c5a34c78-f71a-406d-ac0d-1abde0e43275)
 
-### Задание B
+**Задание 2**
 ```python
 from openpyxl import Workbook
 import csv
@@ -689,7 +689,7 @@ csv_to_xlsx('data/samples/cities.csv', 'data/out/cities.xlsx')
 ## Лабораторная работа 6
 -----
 -----
-### Задание 1
+**Задание 1**
 ``` python
 import argparse
 import sys
@@ -741,7 +741,7 @@ main()
 ```
 <img width="1008" height="318" alt="cli_text" src="https://github.com/user-attachments/assets/362e6df1-a8c6-4118-8e8c-221f9d06c3b2" />
 
-### Задание 2
+**Задание 2**
 ``` python
 import argparse
 import sys
@@ -796,7 +796,7 @@ main()
 ## Лабораторная работа 7
 -----
 -----
-### Задание A
+**Задание 1**
 ``` python
 import pytest
 
@@ -860,7 +860,7 @@ def test_top_n(freq, n, expected):
 
 <img width="1477" height="915" alt="A_7" src="https://github.com/user-attachments/assets/6f258f73-8b02-4484-8f7c-7022f5643115" />
 
-### Задание B
+**Задание 2**
 ``` python
 import pytest
 import json
@@ -925,7 +925,7 @@ def test_csv_to_json_roundtrip(tmp_path: Path):
 ## Лабораторная работа 8
 -----
 -----
-### Задание 1
+**Задание 1**
 ``` python
 from datetime import datetime, date
 from dataclasses import dataclass
@@ -972,7 +972,7 @@ class Student:
         return f"студент: {self.fio}, группа: {self.group}, возраст: {self.age()}, GPA: {self.gpa}"
 ```
 
-### Задание 2
+**Задание 2**
 ``` python
 import json
 from .models import Student
@@ -1001,3 +1001,147 @@ students_to_json(students, "data/lab08/students_output.json")
 
 <img width="885" height="852" alt="01 08" src="https://github.com/user-attachments/assets/a5e945b4-d2f1-4e16-a0a7-1a7e71d601cb" />
 <img width="541" height="662" alt="02 08" src="https://github.com/user-attachments/assets/fa082269-0f5f-49b9-8ae2-7d6c7e1e70ca" />
+
+-----
+-----
+-----
+## Лабораторная работа 9
+-----
+-----
+**GROUP**
+``` python
+import csv
+from pathlib import Path
+import sys
+
+sys.path.append('/Users/User/Downloads/python_labs-main/src/lab08')
+from models import Student
+
+class Group:
+    HEADER = ["fio", "birthdate", "group", "gpa"]
+
+    def __init__(self, storage_path):
+        self.path = Path(storage_path)
+        self._ensure_storage_exists()
+
+    def _ensure_storage_exists(self):
+        if not self.path.exists() or self.path.stat().st_size == 0:
+            with self.path.open("w", encoding="utf-8", newline="") as f:
+                writer = csv.writer(f)
+                writer.writerow(self.HEADER)
+
+    def _read_all(self):
+        rows = []
+        with self.path.open("r", encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f)
+            if reader.fieldnames != self.HEADER:
+                raise ValueError()
+            for row in reader:
+
+                try:
+                    row['gpa'] = float(row['gpa'])
+                except (ValueError, TypeError):
+                    raise ValueError(f"Invalid GPA value: {row['gpa']}")
+                
+                Student(**row)  
+                rows.append(row)
+        return rows
+
+    def _write_all(self, rows):
+        with self.path.open("w", encoding="utf-8", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=self.HEADER)
+            writer.writeheader()
+            writer.writerows(rows)
+
+    def is_empty(self):
+        return len(self._read_all()) == 0
+
+    def list(self):
+        rows = self._read_all()
+        return [Student(**r) for r in rows]
+
+    def add(self, student):
+        rows = self._read_all()
+        rows.append({
+            "fio": student.fio,
+            "birthdate": student.birthdate,
+            "group": student.group,
+            "gpa": str(student.gpa)
+        })
+        self._write_all(rows)
+
+    def find(self, substr):
+        substr = substr.lower()
+        rows = self._read_all()
+        return [Student(**r) for r in rows if substr in r["fio"].lower()]
+
+    def remove(self, fio):
+        rows = self._read_all()
+        new_rows = [r for r in rows if r["fio"] != fio]
+        self._write_all(new_rows)
+
+    def update(self, fio, **fields):
+        rows = self._read_all()
+        for r in rows:
+            if r["fio"] == fio:
+                for k, v in fields.items():
+                    if k in self.HEADER:
+                        r[k] = v
+                Student(**r)  
+        self._write_all(rows)
+
+    def stats(self):
+        rows = self._read_all()
+        if not rows:
+            return {"count": 0, "average_gpa": 0, "top_5_students": []}
+        gpas = [float(r["gpa"]) for r in rows]
+        sorted_rows = sorted(rows, key=lambda x: float(x["gpa"]), reverse=True)
+        return {
+            "count": len(rows),
+            "average_gpa": round(sum(gpas) / len(gpas), 2),
+            "top_5_students": sorted_rows[:5]
+        }
+
+if __name__ == "__main__":
+    import os
+    
+    project_root = "/Users/User/Downloads/python_labs-main"
+    os.chdir(project_root)
+    csv_path = "data/lab09/students.csv"
+    os.makedirs("data/lab09", exist_ok=True)
+    if os.path.exists(csv_path):
+        os.remove(csv_path)
+    
+    group = Group(csv_path)
+
+    print("-" * 50)
+    group.add(Student("Пак Анна", "2005-12-29", "БИВТ-25-2", 4.5))
+    group.add(Student("Трипутень Екатерина", "2007-10-22", "БИВТ-25-2", 3.0))
+    group.add(Student("Петров Петр", "2007-08-23", "БИВТ-25-3", 4.5))
+    
+    print("Список студентов:")
+    for s in group.list():
+        print(f"    {s}")
+    
+    print("-" * 10)
+    print("Поиск студента: Пак")
+    for s in group.find("Пак"):
+        print(f"    {s}")
+    
+    print("-" * 10)
+    print("Обновление данных студента: Трипутень Екатерина, gpa=3.0 -> gpa=4.0")
+    group.update("Трипутень Екатерина", gpa=4.0)
+    print(f"    Результат:\n        {group.find('Трипутень')[0]}")
+    
+    print("-" * 10)
+    print("Удаление студента из списка: Петров Петр")
+    group.remove("Петров Петр")
+    print(f"    Кол-во оставшихся студентов: {len(group.list())}")
+    
+    print("-" * 10)
+    print(f"Файл со списком: {csv_path}")
+    print("-" * 50)
+```
+
+<img width="827" height="437" alt="image9lab" src="https://github.com/user-attachments/assets/f1ccce22-0722-41bc-9de8-042fc84a3fb4" />
+<img width="629" height="225" alt="image9lab2" src="https://github.com/user-attachments/assets/dac7115d-9847-424e-b40e-a68840d0547f" />
